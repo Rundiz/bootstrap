@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          source: ./_gh_pages
+          path: ./_gh_pages
 
   # Deployment job
   deploy:
