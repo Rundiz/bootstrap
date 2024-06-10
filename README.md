@@ -18,7 +18,6 @@ There is no new or extra features than original Bootstrap 3 and no new feature r
 * [Community](#community)
 * [Versioning](#versioning)
 * [Creators](#creators)
-* [Thanks](#thanks)
 * [Copyright and license](#copyright-and-license)
 
 
@@ -122,13 +121,6 @@ Get updates on Bootstrap's development and chat with the project maintainers and
 For transparency into our release cycle and in striving to maintain backward compatibility, Bootstrap is maintained under [the Semantic Versioning guidelines](https://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 See [the Releases section of our GitHub project](https://github.com/rundiz/bootstrap3/releases) for changelogs for each release version of Bootstrap. Release announcement posts on [the official Bootstrap blog](https://blog.getbootstrap.com/) contain summaries of the most noteworthy changes made in each release.
-
-
-## Thanks
-
-<img src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack Logo" width="490" height="106">
-
-Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 
 ## Creators
