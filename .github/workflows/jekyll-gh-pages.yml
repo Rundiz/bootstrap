@@ -35,6 +35,12 @@ jobs:
       # uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           ruby-version: 2.6.3
+      - name: Use Ruby and Bundler version from Gemfile.lock
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+        env:
+          BUNDLER_VERSION: 2.4.19 # Set the desired Bundler version
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
