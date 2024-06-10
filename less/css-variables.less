@@ -1,0 +1,872 @@
+/*! css variables */
+
+//
+// CSS Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+:root {
+    --bs-gray-base: @gray-base;
+    --bs-gray-darker: @gray-darker;
+    --bs-gray-dark: @gray-dark;
+    --bs-gray: @gray;
+    --bs-gray-light: @gray-light;
+    --bs-gray-lighter: @gray-lighter;
+
+    --bs-brand-primary: @brand-primary;
+    --bs-brand-success: @brand-success;
+    --bs-brand-info: @brand-info;
+    --bs-brand-warning: @brand-warning;
+    --bs-brand-danger: @brand-danger;
+
+
+    //== Scaffolding
+    //
+    //## Settings for some of the most global styles.
+
+    //** Background color for `<body>`.
+    --bs-body-bg: @body-bg;
+    //** Global text color on `<body>`.
+    --bs-text-color: var(--bs-gray-dark);
+
+    //** Global textual link color.
+    --bs-link-color: var(--bs-brand-primary);
+    //** Link hover color set via `darken()` function.
+    --bs-link-hover-color: @link-hover-color;
+    //** Link hover decoration.
+    --bs-link-hover-decoration: @link-hover-decoration;
+
+
+    //== Typography
+    //
+    //## Font, line-height, and color for body text, headings, and more.
+
+    --bs-font-family-sans-serif: @font-family-sans-serif;
+    --bs-font-family-serif: @font-family-serif;
+    //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+    --bs-font-family-monospace: @font-family-monospace;
+    --bs-font-family-base: var(--bs-font-family-sans-serif);
+
+    --bs-font-size-base: @font-size-base;
+    --bs-font-size-large: ~"round(up, calc(var(--bs-font-size-base) * 1.25), 1px)"; // ~18px
+    --bs-font-size-small: ~"round(up, calc(var(--bs-font-size-base) * .85), 1px)"; // ~12px
+
+    --bs-font-size-h1: ~"round(down, calc(var(--bs-font-size-base) * 2.6), 1px)"; // ~36px
+    --bs-font-size-h2: ~"round(down, calc(var(--bs-font-size-base) * 2.15), 1px)"; // ~30px
+    --bs-font-size-h3: ~"round(up, calc(var(--bs-font-size-base) * 1.7), 1px)"; // ~24px
+    --bs-font-size-h4: ~"round(up, calc(var(--bs-font-size-base) * 1.25), 1px)"; // ~18px
+    --bs-font-size-h5: var(--bs-font-size-base);
+    --bs-font-size-h6: ~"round(up, calc(var(--bs-font-size-base) * .85), 1px)"; // ~12px
+
+    //** Unit-less `line-height` for use in components like buttons.
+    --bs-line-height-base: @line-height-base; // 20/14
+    //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+    --bs-line-height-computed: ~"round(down, calc(var(--bs-font-size-base) * var(--bs-line-height-base)), 1px)"; // ~20px
+
+    //** By default, this inherits from the `<body>`.
+    --bs-headings-font-family: @headings-font-family;
+    --bs-headings-font-weight: @headings-font-weight;
+    --bs-headings-line-height: @headings-line-height;
+    --bs-headings-color: @headings-color;
+
+
+    //== Iconography
+    //
+    //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+    //** Load fonts from this directory.
+    --bs-icon-font-path: @icon-font-path;
+    //** File name for all font files.
+    --bs-icon-font-name: @icon-font-name;
+    //** Element ID within SVG icon file.
+    --bs-icon-font-svg-id: @icon-font-svg-id;
+
+
+    //== Components
+    //
+    //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+    --bs-padding-base-vertical: @padding-base-vertical;
+    --bs-padding-base-horizontal: @padding-base-horizontal;
+
+    --bs-padding-large-vertical: @padding-large-vertical;
+    --bs-padding-large-horizontal: @padding-large-horizontal;
+
+    --bs-padding-small-vertical: @padding-small-vertical;
+    --bs-padding-small-horizontal: @padding-small-horizontal;
+
+    --bs-padding-xs-vertical: @padding-xs-vertical;
+    --bs-padding-xs-horizontal: @padding-xs-horizontal;
+
+    --bs-line-height-large: @line-height-large; // extra decimals for Win 8.1 Chrome
+    --bs-line-height-small: @line-height-small;
+
+    --bs-border-radius-base: @border-radius-base;
+    --bs-border-radius-large: @border-radius-large;
+    --bs-border-radius-small: @border-radius-small;
+
+    //** Global color for active items (e.g., navs or dropdowns).
+    --bs-component-active-color: @component-active-color;
+    //** Global background color for active items (e.g., navs or dropdowns).
+    --bs-component-active-bg: var(--bs-brand-primary);
+
+    //** Width of the `border` for generating carets that indicate dropdowns.
+    --bs-caret-width-base: @caret-width-base;
+    //** Carets increase slightly in size for larger components.
+    --bs-caret-width-large: @caret-width-large;
+
+
+    //== Tables
+    //
+    //## Customizes the `.table` component with basic values, each used across all table variations.
+
+    //** Padding for `<th>`s and `<td>`s.
+    --bs-table-cell-padding: @table-cell-padding;
+    //** Padding for cells in `.table-condensed`.
+    --bs-table-condensed-cell-padding: @table-condensed-cell-padding;
+
+    //** Default background color used for all tables.
+    --bs-table-bg: @table-bg;
+    //** Background color used for `.table-striped`.
+    --bs-table-bg-accent: @table-bg-accent;
+    //** Background color used for `.table-hover`.
+    --bs-table-bg-hover: @table-bg-hover;
+    --bs-table-bg-active: var(--bs-table-bg-hover);
+
+    //** Border color for table and cell borders.
+    --bs-table-border-color: @table-border-color;
+
+
+    //== Buttons
+    //
+    //## For each of Bootstrap's buttons, define text, background and border color.
+
+    --bs-btn-font-weight: @btn-font-weight;
+
+    --bs-btn-default-color: @btn-default-color;
+    --bs-btn-default-bg: @btn-default-bg;
+    --bs-btn-default-border: @btn-default-border;
+
+    --bs-btn-primary-color: @btn-primary-color;
+    --bs-btn-primary-bg: var(--bs-brand-primary);
+    --bs-btn-primary-border: @btn-primary-border;
+
+    --bs-btn-success-color: @btn-success-color;
+    --bs-btn-success-bg: var(--bs-brand-success);
+    --bs-btn-success-border: @btn-success-border;
+
+    --bs-btn-info-color: @btn-info-color;
+    --bs-btn-info-bg: var(--bs-brand-info);
+    --bs-btn-info-border: @btn-info-border;
+
+    --bs-btn-warning-color: @btn-warning-color;
+    --bs-btn-warning-bg: var(--bs-brand-warning);
+    --bs-btn-warning-border: @btn-warning-border;
+
+    --bs-btn-danger-color: @btn-danger-color;
+    --bs-btn-danger-bg: var(--bs-brand-danger);
+    --bs-btn-danger-border: @btn-danger-border;
+
+    --bs-btn-link-disabled-color: var(--bs-gray-light);
+
+    // Allows for customizing button radius independently from global border radius
+    --bs-btn-border-radius-base: var(--bs-border-radius-base);
+    --bs-btn-border-radius-large: var(--bs-border-radius-large);
+    --bs-btn-border-radius-small: var(--bs-border-radius-small);
+
+
+    //== Forms
+    //
+    //##
+
+    //** `<input>` background color
+    --bs-input-bg: @input-bg;
+    //** `<input disabled>` background color
+    --bs-input-bg-disabled: var(--bs-gray-lighter);
+
+    //** Text color for `<input>`s
+    --bs-input-color: var(--bs-gray);
+    //** `<input>` border color
+    --bs-input-border: @input-border;
+
+    // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
+    //** Default `.form-control` border radius
+    // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    --bs-input-border-radius: var(--bs-border-radius-base);
+    //** Large `.form-control` border radius
+    --bs-input-border-radius-large: var(--bs-border-radius-large);
+    //** Small `.form-control` border radius
+    --bs-input-border-radius-small: var(--bs-border-radius-small);
+
+    //** Border color for inputs on focus
+    --bs-input-border-focus: @input-border-focus;
+
+    //** Placeholder text color
+    --bs-input-color-placeholder: @input-color-placeholder;
+
+    //** Default `.form-control` height
+    --bs-input-height-base: calc(var(--bs-line-height-computed) + calc(var(--bs-padding-base-vertical) * 2) + 2px);
+    //** Large `.form-control` height
+    --bs-input-height-large: ~"calc(round(up, calc(var(--bs-font-size-large) * var(--bs-line-height-large)), 1px) + calc(var(--bs-padding-large-vertical) * 2) + 2px)";
+    //** Small `.form-control` height
+    --bs-input-height-small: ~"calc(round(down, calc(var(--bs-font-size-small) * var(--bs-line-height-small)), 1px) + calc(var(--bs-padding-small-vertical) * 2) + 2px)";
+
+    //** `.form-group` margin
+    --bs-form-group-margin-bottom: @form-group-margin-bottom;
+
+    --bs-legend-color: var(--bs-gray-dark);
+    --bs-legend-border-color: @legend-border-color;
+
+    //** Background color for textual input addons
+    --bs-input-group-addon-bg: var(--bs-gray-lighter);
+    //** Border color for textual input addons
+    --bs-input-group-addon-border-color: var(--bs-input-border);
+
+    //** Disabled cursor for form controls and buttons.
+    --bs-cursor-disabled: @cursor-disabled;
+
+
+    //== Dropdowns
+    //
+    //## Dropdown menu container and contents.
+
+    //** Background for the dropdown menu.
+    --bs-dropdown-bg: @dropdown-bg;
+    //** Dropdown menu `border-color`.
+    --bs-dropdown-border: @dropdown-border;
+    //** Dropdown menu `border-color` **for IE8**.
+    --bs-dropdown-fallback-border: @dropdown-fallback-border;
+    //** Divider color for between dropdown items.
+    --bs-dropdown-divider-bg: @dropdown-divider-bg;
+
+    //** Dropdown link text color.
+    --bs-dropdown-link-color: var(--bs-gray-dark);
+    //** Hover color for dropdown links.
+    --bs-dropdown-link-hover-color: @dropdown-link-hover-color;
+    //** Hover background for dropdown links.
+    --bs-dropdown-link-hover-bg: @dropdown-link-hover-bg;
+
+    //** Active dropdown menu item text color.
+    --bs-dropdown-link-active-color: var(--bs-component-active-color);
+    //** Active dropdown menu item background color.
+    --bs-dropdown-link-active-bg: var(--bs-component-active-bg);
+
+    //** Disabled dropdown menu item background color.
+    --bs-dropdown-link-disabled-color: var(--bs-gray-light);
+
+    //** Text color for headers within dropdown menus.
+    --bs-dropdown-header-color: var(--bs-gray-light);
+
+    //** Deprecated `@dropdown-caret-color` as of v3.1.0
+    --bs-dropdown-caret-color: @dropdown-caret-color;
+
+
+    //-- Z-index master list
+    //
+    // Warning: Avoid customizing these values. They're used for a bird's eye view
+    // of components dependent on the z-axis and are designed to all work together.
+    //
+    // Note: These variables are not generated into the Customizer.
+
+    --bs-zindex-navbar: @zindex-navbar;
+    --bs-zindex-dropdown: @zindex-dropdown;
+    --bs-zindex-popover: @zindex-popover;
+    --bs-zindex-tooltip: @zindex-tooltip;
+    --bs-zindex-navbar-fixed: @zindex-navbar-fixed;
+    --bs-zindex-modal-background: @zindex-modal-background;
+    --bs-zindex-modal: @zindex-modal;
+
+
+    //== Media queries breakpoints
+    //
+    //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+    // Extra small screen / phone
+    //** Deprecated `@screen-xs` as of v3.0.1
+    --bs-screen-xs: @screen-xs;
+    //** Deprecated `@screen-xs-min` as of v3.2.0
+    --bs-screen-xs-min: var(--bs-screen-xs);
+    //** Deprecated `@screen-phone` as of v3.0.1
+    --bs-screen-phone: var(--bs-screen-xs-min);
+
+    // Small screen / tablet
+    //** Deprecated `@screen-sm` as of v3.0.1
+    --bs-screen-sm: @screen-sm;
+    --bs-screen-sm-min: var(--bs-screen-sm);
+    //** Deprecated `@screen-tablet` as of v3.0.1
+    --bs-screen-tablet: var(--bs-screen-sm-min);
+
+    // Medium screen / desktop
+    //** Deprecated `@screen-md` as of v3.0.1
+    --bs-screen-md: @screen-md;
+    --bs-screen-md-min: var(--bs-screen-md);
+    //** Deprecated `@screen-desktop` as of v3.0.1
+    --bs-screen-desktop: var(--bs-screen-md-min);
+
+    // Large screen / wide desktop
+    //** Deprecated `@screen-lg` as of v3.0.1
+    --bs-screen-lg: @screen-lg;
+    --bs-screen-lg-min: var(--bs-screen-lg);
+    //** Deprecated `@screen-lg-desktop` as of v3.0.1
+    --bs-screen-lg-desktop: var(--bs-screen-lg-min);
+
+    // So media queries don't overlap when required, provide a maximum
+    --bs-screen-xs-max: calc(var(--bs-screen-sm-min) - 1px);
+    --bs-screen-sm-max: calc(var(--bs-screen-md-min) - 1px);
+    --bs-screen-md-max: calc(var(--bs-screen-lg-min) - 1px);
+
+
+    //== Grid system
+    //
+    //## Define your custom responsive grid.
+
+    //** Number of columns in the grid.
+    --bs-grid-columns: @grid-columns;
+    //** Padding between columns. Gets divided in half for the left and right.
+    --bs-grid-gutter-width: @grid-gutter-width;
+    // Navbar collapse
+    //** Point at which the navbar becomes uncollapsed.
+    --bs-grid-float-breakpoint: var(--bs-screen-sm-min);
+    //** Point at which the navbar begins collapsing.
+    --bs-grid-float-breakpoint-max: calc(var(--bs-grid-float-breakpoint) - 1px);
+
+
+    //== Container sizes
+    //
+    //## Define the maximum width of `.container` for different screen sizes.
+
+    // Small screen / tablet
+    --bs-container-tablet: calc(720px + var(--bs-grid-gutter-width));
+    //** For `@screen-sm-min` and up.
+    --bs-container-sm: var(--bs-container-tablet);
+
+    // Medium screen / desktop
+    --bs-container-desktop: calc(940px + var(--bs-grid-gutter-width));
+    //** For `@screen-md-min` and up.
+    --bs-container-md: var(--bs-container-desktop);
+
+    // Large screen / wide desktop
+    --bs-container-large-desktop: calc(1140px + var(--bs-grid-gutter-width));
+    //** For `@screen-lg-min` and up.
+    --bs-container-lg: var(--bs-container-large-desktop);
+
+
+    //== Navbar
+    //
+    //##
+
+    // Basics of a navbar
+    --bs-navbar-height: @navbar-height;
+    --bs-navbar-margin-bottom: var(--bs-line-height-computed);
+    --bs-navbar-border-radius: var(--bs-border-radius-base);
+    --bs-navbar-padding-horizontal: ~"round(down, calc(var(--bs-grid-gutter-width) / 2), 1px)";
+    --bs-navbar-padding-vertical: calc((var(--bs-navbar-height) - var(--bs-line-height-computed)) / 2);
+    --bs-navbar-collapse-max-height: @navbar-collapse-max-height;
+
+    --bs-navbar-default-color: @navbar-default-color;
+    --bs-navbar-default-bg: @navbar-default-bg;
+    --bs-navbar-default-border: @navbar-default-border;
+
+    // Navbar links
+    --bs-navbar-default-link-color: @navbar-default-link-color;
+    --bs-navbar-default-link-hover-color: @navbar-default-link-hover-color;
+    --bs-navbar-default-link-hover-bg: @navbar-default-link-hover-bg;
+    --bs-navbar-default-link-active-color: @navbar-default-link-active-color;
+    --bs-navbar-default-link-active-bg: @navbar-default-link-active-bg;
+    --bs-navbar-default-link-disabled-color: @navbar-default-link-disabled-color;
+    --bs-navbar-default-link-disabled-bg: @navbar-default-link-disabled-bg;
+
+    // Navbar brand label
+    --bs-navbar-default-brand-color: var(--bs-navbar-default-link-color);
+    --bs-navbar-default-brand-hover-color: @navbar-default-brand-hover-color;
+    --bs-navbar-default-brand-hover-bg: @navbar-default-brand-hover-bg;
+
+    // Navbar toggle
+    --bs-navbar-default-toggle-hover-bg: @navbar-default-toggle-hover-bg;
+    --bs-navbar-default-toggle-icon-bar-bg: @navbar-default-toggle-icon-bar-bg;
+    --bs-navbar-default-toggle-border-color: @navbar-default-toggle-border-color;
+
+
+    //=== Inverted navbar
+    // Reset inverted navbar basics
+    --bs-navbar-inverse-color: @navbar-inverse-color;
+    --bs-navbar-inverse-bg: @navbar-inverse-bg;
+    --bs-navbar-inverse-border: @navbar-inverse-border;
+
+    // Inverted navbar links
+    --bs-navbar-inverse-link-color: @navbar-inverse-link-color;
+    --bs-navbar-inverse-link-hover-color: @navbar-inverse-link-hover-color;
+    --bs-navbar-inverse-link-hover-bg: @navbar-inverse-link-hover-bg;
+    --bs-navbar-inverse-link-active-color: var(--bs-navbar-inverse-link-hover-color);
+    --bs-navbar-inverse-link-active-bg: @navbar-inverse-link-active-bg;
+    --bs-navbar-inverse-link-disabled-color: @navbar-inverse-link-disabled-color;
+    --bs-navbar-inverse-link-disabled-bg: @navbar-inverse-link-disabled-bg;
+
+    // Inverted navbar brand label
+    --bs-navbar-inverse-brand-color: var(--bs-navbar-inverse-link-color);
+    --bs-navbar-inverse-brand-hover-color: @navbar-inverse-brand-hover-color;
+    --bs-navbar-inverse-brand-hover-bg: @navbar-inverse-brand-hover-bg;
+
+    // Inverted navbar toggle
+    --bs-navbar-inverse-toggle-hover-bg: @navbar-inverse-toggle-hover-bg;
+    --bs-navbar-inverse-toggle-icon-bar-bg: @navbar-inverse-toggle-icon-bar-bg;
+    --bs-navbar-inverse-toggle-border-color: @navbar-inverse-toggle-border-color;
+
+
+    //== Navs
+    //
+    //##
+
+    //=== Shared nav styles
+    --bs-nav-link-padding: @nav-link-padding;
+    --bs-nav-link-hover-bg: var(--bs-gray-lighter);
+
+    --bs-nav-disabled-link-color: var(--bs-gray-light);
+    --bs-nav-disabled-link-hover-color: var(--bs-gray-light);
+
+    //== Tabs
+    --bs-nav-tabs-border-color: @nav-tabs-border-color;
+
+    --bs-nav-tabs-link-hover-border-color: var(--bs-gray-lighter);
+
+    --bs-nav-tabs-active-link-hover-bg: var(--bs-body-bg);
+    --bs-nav-tabs-active-link-hover-color: var(--bs-gray);
+    --bs-nav-tabs-active-link-hover-border-color: @nav-tabs-active-link-hover-border-color;
+
+    --bs-nav-tabs-justified-link-border-color: @nav-tabs-justified-link-border-color;
+    --bs-nav-tabs-justified-active-link-border-color: var(--bs-body-bg);
+
+    //== Pills
+    --bs-nav-pills-border-radius: var(--bs-border-radius-base);
+    --bs-nav-pills-active-link-hover-bg: var(--bs-component-active-bg);
+    --bs-nav-pills-active-link-hover-color: var(--bs-component-active-color);
+
+
+    //== Pagination
+    //
+    //##
+
+    --bs-pagination-color: var(--bs-link-color);
+    --bs-pagination-bg: @pagination-bg;
+    --bs-pagination-border: @pagination-border;
+
+    --bs-pagination-hover-color: var(--bs-link-hover-color);
+    --bs-pagination-hover-bg: var(--bs-gray-lighter);
+    --bs-pagination-hover-border: @pagination-hover-border;
+
+    --bs-pagination-active-color: @pagination-active-color;
+    --bs-pagination-active-bg: var(--bs-brand-primary);
+    --bs-pagination-active-border: var(--bs-brand-primary);
+
+    --bs-pagination-disabled-color: var(--bs-gray-light);
+    --bs-pagination-disabled-bg: @pagination-disabled-bg;
+    --bs-pagination-disabled-border: @pagination-disabled-border;
+
+
+    //== Pager
+    //
+    //##
+
+    --bs-pager-bg: var(--bs-pagination-bg);
+    --bs-pager-border: var(--bs-pagination-border);
+    --bs-pager-border-radius: @pager-border-radius;
+
+    --bs-pager-hover-bg: var(--bs-pagination-hover-bg);
+
+    --bs-pager-active-bg: var(--bs-pagination-active-bg);
+    --bs-pager-active-color: var(--bs-pagination-active-color);
+
+    --bs-pager-disabled-color: var(--bs-pagination-disabled-color);
+
+
+    //== Jumbotron
+    //
+    //##
+
+    --bs-jumbotron-padding: @jumbotron-padding;
+    --bs-jumbotron-color: @jumbotron-color;
+    --bs-jumbotron-bg: var(--bs-gray-lighter);
+    --bs-jumbotron-heading-color: @jumbotron-heading-color;
+    --bs-jumbotron-font-size: ~"round(up, calc(var(--bs-font-size-base) * 1.5), 1px)";
+    --bs-jumbotron-heading-font-size: ~"round(up, calc(var(--bs-font-size-base) * 4.5), 1px)";
+
+
+    //== Form states and alerts
+    //
+    //## Define colors for form feedback states and, by default, alerts.
+
+    --bs-state-success-text: @state-success-text;
+    --bs-state-success-bg: @state-success-bg;
+    --bs-state-success-border: @state-success-border;
+
+    --bs-state-info-text: @state-info-text;
+    --bs-state-info-bg: @state-info-bg;
+    --bs-state-info-border: @state-info-border;
+
+    --bs-state-warning-text: @state-warning-text;
+    --bs-state-warning-bg: @state-warning-bg;
+    --bs-state-warning-border: @state-warning-border;
+
+    --bs-state-danger-text: @state-danger-text;
+    --bs-state-danger-bg: @state-danger-bg;
+    --bs-state-danger-border: @state-danger-border;
+
+
+    //== Tooltips
+    //
+    //##
+
+    //** Tooltip max width
+    --bs-tooltip-max-width: @tooltip-max-width;
+    //** Tooltip text color
+    --bs-tooltip-color: @tooltip-color;
+    //** Tooltip background color
+    --bs-tooltip-bg: @tooltip-bg;
+    --bs-tooltip-opacity: @tooltip-opacity;
+
+    //** Tooltip arrow width
+    --bs-tooltip-arrow-width: @tooltip-arrow-width;
+    //** Tooltip arrow color
+    --bs-tooltip-arrow-color: var(--bs-tooltip-bg);
+
+
+    //== Popovers
+    //
+    //##
+
+    //** Popover body background color
+    --bs-popover-bg: @popover-bg;
+    //** Popover maximum width
+    --bs-popover-max-width: @popover-max-width;
+    //** Popover border color
+    --bs-popover-border-color: @popover-border-color;
+    //** Popover fallback border color
+    --bs-popover-fallback-border-color: @popover-fallback-border-color;
+
+    //** Popover title background color
+    --bs-popover-title-bg: @popover-title-bg;
+
+    //** Popover arrow width
+    --bs-popover-arrow-width: @popover-arrow-width;
+    //** Popover arrow color
+    --bs-popover-arrow-color: var(--bs-popover-bg);
+
+    //** Popover outer arrow width
+    --bs-popover-arrow-outer-width: calc(var(--bs-popover-arrow-width) + 1px);
+    //** Popover outer arrow color
+    --bs-popover-arrow-outer-color: @popover-arrow-outer-color;
+    //** Popover outer arrow fallback color
+    --bs-popover-arrow-outer-fallback-color: @popover-arrow-outer-fallback-color;
+
+
+    //== Labels
+    //
+    //##
+
+    //** Default label background color
+    --bs-label-default-bg: var(--bs-gray-light);
+    //** Primary label background color
+    --bs-label-primary-bg: var(--bs-brand-primary);
+    //** Success label background color
+    --bs-label-success-bg: var(--bs-brand-success);
+    //** Info label background color
+    --bs-label-info-bg: var(--bs-brand-info);
+    //** Warning label background color
+    --bs-label-warning-bg: var(--bs-brand-warning);
+    //** Danger label background color
+    --bs-label-danger-bg: var(--bs-brand-danger);
+
+    //** Default label text color
+    --bs-label-color: @label-color;
+    //** Default text color of a linked label
+    --bs-label-link-hover-color: @label-link-hover-color;
+
+
+    //== Modals
+    //
+    //##
+
+    //** Padding applied to the modal body
+    --bs-modal-inner-padding: @modal-inner-padding;
+
+    //** Padding applied to the modal title
+    --bs-modal-title-padding: @modal-title-padding;
+    //** Modal title line-height
+    --bs-modal-title-line-height: var(--bs-line-height-base);
+
+    //** Background color of modal content area
+    --bs-modal-content-bg: @modal-content-bg;
+    //** Modal content border color
+    --bs-modal-content-border-color: @modal-content-border-color;
+    //** Modal content border color **for IE8**
+    --bs-modal-content-fallback-border-color: @modal-content-fallback-border-color;
+
+    //** Modal backdrop background color
+    --bs-modal-backdrop-bg: @modal-backdrop-bg;
+    //** Modal backdrop opacity
+    --bs-modal-backdrop-opacity: @modal-backdrop-opacity;
+    //** Modal header border color
+    --bs-modal-header-border-color: @modal-header-border-color;
+    //** Modal footer border color
+    --bs-modal-footer-border-color: var(--bs-modal-header-border-color);
+
+    --bs-modal-lg: @modal-lg;
+    --bs-modal-md: @modal-md;
+    --bs-modal-sm: @modal-sm;
+
+
+    //== Alerts
+    //
+    //## Define alert colors, border radius, and padding.
+
+    --bs-alert-padding: @alert-padding;
+    --bs-alert-border-radius: var(--bs-border-radius-base);
+    --bs-alert-link-font-weight: @alert-link-font-weight;
+
+    --bs-alert-success-bg: var(--bs-state-success-bg);
+    --bs-alert-success-text: var(--bs-state-success-text);
+    --bs-alert-success-border: var(--bs-state-success-border);
+
+    --bs-alert-info-bg: var(--bs-state-info-bg);
+    --bs-alert-info-text: var(--bs-state-info-text);
+    --bs-alert-info-border: var(--bs-state-info-border);
+
+    --bs-alert-warning-bg: var(--bs-state-warning-bg);
+    --bs-alert-warning-text: var(--bs-state-warning-text);
+    --bs-alert-warning-border: var(--bs-state-warning-border);
+
+    --bs-alert-danger-bg: var(--bs-state-danger-bg);
+    --bs-alert-danger-text: var(--bs-state-danger-text);
+    --bs-alert-danger-border: var(--bs-state-danger-border);
+
+
+    //== Progress bars
+    //
+    //##
+
+    //** Background color of the whole progress component
+    --bs-progress-bg: @progress-bg;
+    //** Progress bar text color
+    --bs-progress-bar-color: @progress-bar-color;
+    //** Variable for setting rounded corners on progress bar.
+    --bs-progress-border-radius: var(--bs-border-radius-base);
+
+    //** Default progress bar color
+    --bs-progress-bar-bg: var(--bs-brand-primary);
+    //** Success progress bar color
+    --bs-progress-bar-success-bg: var(--bs-brand-success);
+    //** Warning progress bar color
+    --bs-progress-bar-warning-bg: var(--bs-brand-warning);
+    //** Danger progress bar color
+    --bs-progress-bar-danger-bg: var(--bs-brand-danger);
+    //** Info progress bar color
+    --bs-progress-bar-info-bg: var(--bs-brand-info);
+
+
+    //== List group
+    //
+    //##
+
+    //** Background color on `.list-group-item`
+    --bs-list-group-bg: @list-group-bg;
+    //** `.list-group-item` border color
+    --bs-list-group-border: @list-group-border;
+    //** List group border radius
+    --bs-list-group-border-radius: var(--bs-border-radius-base);
+
+    //** Background color of single list items on hover
+    --bs-list-group-hover-bg: @list-group-hover-bg;
+    //** Text color of active list items
+    --bs-list-group-active-color: var(--bs-component-active-color);
+    //** Background color of active list items
+    --bs-list-group-active-bg: var(--bs-component-active-bg);
+    //** Border color of active list elements
+    --bs-list-group-active-border: var(--bs-list-group-active-bg);
+    //** Text color for content within active list items
+    --bs-list-group-active-text-color: @list-group-active-text-color;
+
+    //** Text color of disabled list items
+    --bs-list-group-disabled-color: var(--bs-gray-light);
+    //** Background color of disabled list items
+    --bs-list-group-disabled-bg: var(--bs-gray-lighter);
+    //** Text color for content within disabled list items
+    --bs-list-group-disabled-text-color: var(--bs-list-group-disabled-color);
+
+    --bs-list-group-link-color: @list-group-link-color;
+    --bs-list-group-link-hover-color: var(--bs-list-group-link-color);
+    --bs-list-group-link-heading-color: @list-group-link-heading-color;
+
+
+    //== Panels
+    //
+    //##
+
+    --bs-panel-bg: @panel-bg;
+    --bs-panel-body-padding: @panel-body-padding;
+    --bs-panel-heading-padding: @panel-heading-padding;
+    --bs-panel-footer-padding: var(--bs-panel-heading-padding);
+    --bs-panel-border-radius: var(--bs-border-radius-base);
+
+    //** Border color for elements within panels
+    --bs-panel-inner-border: @panel-inner-border;
+    --bs-panel-footer-bg: @panel-footer-bg;
+
+    --bs-panel-default-text: var(--bs-gray-dark);
+    --bs-panel-default-border: @panel-default-border;
+    --bs-panel-default-heading-bg: @panel-default-heading-bg;
+
+    --bs-panel-primary-text: @panel-primary-text;
+    --bs-panel-primary-border: var(--bs-brand-primary);
+    --bs-panel-primary-heading-bg: var(--bs-brand-primary);
+
+    --bs-panel-success-text: var(--bs-state-success-text);
+    --bs-panel-success-border: var(--bs-state-success-border);
+    --bs-panel-success-heading-bg: var(--bs-state-success-bg);
+
+    --bs-panel-info-text: var(--bs-state-info-text);
+    --bs-panel-info-border: var(--bs-state-info-border);
+    --bs-panel-info-heading-bg: var(--bs-state-info-bg);
+
+    --bs-panel-warning-text: var(--bs-state-warning-text);
+    --bs-panel-warning-border: var(--bs-state-warning-border);
+    --bs-panel-warning-heading-bg: var(--bs-state-warning-bg);
+
+    --bs-panel-danger-text: var(--bs-state-danger-text);
+    --bs-panel-danger-border: var(--bs-state-danger-border);
+    --bs-panel-danger-heading-bg: var(--bs-state-danger-bg);
+
+
+    //== Thumbnails
+    //
+    //##
+
+    //** Padding around the thumbnail image
+    --bs-thumbnail-padding: @thumbnail-padding;
+    //** Thumbnail background color
+    --bs-thumbnail-bg: var(--bs-body-bg);
+    //** Thumbnail border color
+    --bs-thumbnail-border: @thumbnail-border;
+    //** Thumbnail border radius
+    --bs-thumbnail-border-radius: var(--bs-border-radius-base);
+
+    //** Custom text color for thumbnail captions
+    --bs-thumbnail-caption-color: var(--bs-text-color);
+    //** Padding around the thumbnail caption
+    --bs-thumbnail-caption-padding: @thumbnail-caption-padding;
+
+
+    //== Wells
+    //
+    //##
+
+    --bs-well-bg: @well-bg;
+    --bs-well-border: @well-border;
+
+
+    //== Badges
+    //
+    //##
+
+    --bs-badge-color: @badge-color;
+    //** Linked badge text color on hover
+    --bs-badge-link-hover-color: @badge-link-hover-color;
+    --bs-badge-bg: var(--bs-gray-light);
+
+    //** Badge text color in active nav link
+    --bs-badge-active-color: var(--bs-link-color);
+    //** Badge background color in active nav link
+    --bs-badge-active-bg: @badge-active-bg;
+
+    --bs-badge-font-weight: @badge-font-weight;
+    --bs-badge-line-height: @badge-line-height;
+    --bs-badge-border-radius: @badge-border-radius;
+
+
+    //== Breadcrumbs
+    //
+    //##
+
+    --bs-breadcrumb-padding-vertical: @breadcrumb-padding-vertical;
+    --bs-breadcrumb-padding-horizontal: @breadcrumb-padding-horizontal;
+    //** Breadcrumb background color
+    --bs-breadcrumb-bg: @breadcrumb-bg;
+    //** Breadcrumb text color
+    --bs-breadcrumb-color: @breadcrumb-color;
+    //** Text color of current page in the breadcrumb
+    --bs-breadcrumb-active-color: var(--bs-gray-light);
+    //** Textual separator for between breadcrumb elements
+    --bs-breadcrumb-separator: @breadcrumb-separator;
+
+
+    //== Carousel
+    //
+    //##
+
+    --bs-carousel-text-shadow: @carousel-text-shadow;
+
+    --bs-carousel-control-color: @carousel-control-color;
+    --bs-carousel-control-width: @carousel-control-width;
+    --bs-carousel-control-opacity: @carousel-control-opacity;
+    --bs-carousel-control-font-size: @carousel-control-font-size;
+
+    --bs-carousel-indicator-active-bg: @carousel-indicator-active-bg;
+    --bs-carousel-indicator-border-color: @carousel-indicator-border-color;
+
+    --bs-carousel-caption-color: @carousel-caption-color;
+
+
+    //== Close
+    //
+    //##
+
+    --bs-close-font-weight: @close-font-weight;
+    --bs-close-color: @close-color;
+    --bs-close-text-shadow: @close-text-shadow;
+
+
+    //== Code
+    //
+    //##
+
+    --bs-code-color: @code-color;
+    --bs-code-bg: @code-bg;
+
+    --bs-kbd-color: @kbd-color;
+    --bs-kbd-bg: @kbd-bg;
+
+    --bs-pre-bg: @pre-bg;
+    --bs-pre-color: var(--bs-gray-dark);
+    --bs-pre-border-color: @pre-border-color;
+    --bs-pre-scrollable-max-height: @pre-scrollable-max-height;
+
+
+    //== Type
+    //
+    //##
+
+    //** Horizontal offset for forms and lists.
+    --bs-component-offset-horizontal: @component-offset-horizontal;
+    //** Text muted color
+    --bs-text-muted: var(--bs-gray-light);
+    //** Abbreviations and acronyms border color
+    --bs-abbr-border-color: var(--bs-gray-light);
+    //** Headings small color
+    --bs-headings-small-color: var(--bs-gray-light);
+    //** Blockquote small color
+    --bs-blockquote-small-color: var(--bs-gray-light);
+    //** Blockquote font size
+    --bs-blockquote-font-size: calc(var(--bs-font-size-base) * 1.25);
+    //** Blockquote border color
+    --bs-blockquote-border-color: var(--bs-gray-lighter);
+    //** Page header border color
+    --bs-page-header-border-color: var(--bs-gray-lighter);
+    //** Width of horizontal description list titles
+    --bs-dl-horizontal-offset: var(--bs-component-offset-horizontal);
+    //** Point at which .dl-horizontal becomes horizontal
+    --bs-dl-horizontal-breakpoint: var(--bs-grid-float-breakpoint);
+    //** Horizontal line color.
+    --bs-hr-border: var(--bs-gray-lighter);
+}

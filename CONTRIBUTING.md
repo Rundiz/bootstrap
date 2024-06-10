@@ -13,7 +13,7 @@ patches and features.
 
 ## Using the issue tracker
 
-The [issue tracker](https://github.com/twbs/bootstrap/issues) is
+The [issue tracker](https://github.com/rundiz/bootstrap3/issues) is
 the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests)
 and [submitting pull requests](#pull-requests), but please respect the following
 restrictions:
@@ -47,13 +47,12 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `customizer` - Issues with our web-based Customizer.
 - `docs` - Issues for improving or updating our documentation.
 - `examples` - Issues involving the example templates included in our docs.
-- `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v3.0.0` to `v3.1.0`).
 - `grunt` - Issues with our included JavaScript-based Gruntfile, which is used to run all our tests, concatenate and compile source files, and more.
 - `help wanted` - Issues we need or would love help from the community to resolve.
 - `js` - Issues stemming from our compiled or source JavaScript files.
 - `meta` - Issues with the project itself or our GitHub repository.
 
-For a complete look at our labels, see the [project labels page](https://github.com/twbs/bootstrap/labels).
+For a complete look at our labels, see the [project labels page](https://github.com/rundiz/bootstrap3/labels).
 
 
 ## Bug reports
@@ -117,16 +116,8 @@ When feasible, we aim to report such upstream bugs to the relevant browser vendo
 
 ## Feature requests
 
-Feature requests are welcome, but please note that they **must target
-[Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev),** because
-Bootstrap v3 is now in maintenance mode and is closed off to new features.
-This is so that we can focus our efforts on Bootstrap v4, the future of the
-framework.
-
-Before opening a feature request, please take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to *you* to make a strong
-case to convince the project's developers of the merits of this feature. Please
-provide as much detail and context as possible.
+No more feature requests or feature suggest, sorry. This repository only keep Bootstrap 3 original features but use modern functions and syntax to make it work with modern web browsers.  
+For example use CSS variables (`var(--variable-name)`) instead of direct value from Less variables (`@variable-name`).
 
 
 ## Pull requests
@@ -140,28 +131,14 @@ implementing features, refactoring code, porting to a different language),
 otherwise you risk spending a lot of time working on something that the
 project's developers might not want to merge into the project.
 
-In particular, **pull requests that add new features to Bootstrap v3 will be
-rejected.** Bootstrap v3 is now in maintenance mode and is therefore closed
-off to new features, so that we can focus our efforts on Bootstrap v4, the
-future of the framework. Pull requests that add new features should target
-[Bootstrap v4 (the `v4-dev` git branch)](https://github.com/twbs/bootstrap/tree/v4-dev)
-instead, where they will be welcomed and duly considered.
-
 Please adhere to the [coding guidelines](#code-guidelines) used throughout the
 project (indentation, accurate comments, etc.) and any other requirements
 (such as test coverage).
 
 **Do not edit `bootstrap.css`, `bootstrap-theme.css`, or `bootstrap.js`
 directly!** Those files are automatically generated. You should edit the
-source files in [`/bootstrap/less/`](https://github.com/twbs/bootstrap/tree/v3-dev/less),
-[`/bootstrap/scss/`](https://github.com/twbs/bootstrap/tree/v4-dev/scss) (for Bootstrap v4),
-and/or [`/bootstrap/js/`](https://github.com/twbs/bootstrap/tree/v3-dev/js) instead.
-
-Similarly, when contributing to Bootstrap's documentation, you should edit the
-documentation source files in
-[the `/bootstrap/docs/` directory of the `v3-dev` branch](https://github.com/twbs/bootstrap/tree/v3-dev/docs).
-**Do not edit the `gh-pages` branch.** That branch is generated from the
-documentation source files and is managed separately by the Bootstrap Core Team.
+source files in [`/bootstrap/less/`](https://github.com/rundiz/bootstrap3/tree/v3-dev/less),
+and/or [`/bootstrap/js/`](https://github.com/rundiz/bootstrap3/tree/v3-dev/js) instead.
 
 Adhering to the following process is the best way to get your work
 included in the project:
@@ -175,7 +152,7 @@ included in the project:
    # Navigate to the newly cloned directory
    cd bootstrap
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/twbs/bootstrap.git
+   git remote add upstream https://github.com/rundiz/bootstrap3.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:

@@ -21,23 +21,23 @@
     > a {
       position: relative;
       display: block;
-      padding: @nav-link-padding;
+      padding: var(--bs-nav-link-padding);
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: @nav-link-hover-bg;
+        background-color: var(--bs-nav-link-hover-bg);
       }
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
     &.disabled > a {
-      color: @nav-disabled-link-color;
+      color: var(--bs-nav-disabled-link-color);
 
       &:hover,
       &:focus {
-        color: @nav-disabled-link-hover-color;
+        color: var(--bs-nav-disabled-link-hover-color);
         text-decoration: none;
-        cursor: @cursor-disabled;
+        cursor: var(--bs-cursor-disabled);
         background-color: transparent;
       }
     }
@@ -48,8 +48,8 @@
     &,
     &:hover,
     &:focus {
-      background-color: @nav-link-hover-bg;
-      border-color: @link-color;
+      background-color: var(--bs-nav-link-hover-bg);
+      border-color: var(--bs-link-color);
     }
   }
 
@@ -76,7 +76,7 @@
 
 // Give the tabs something to sit on
 .nav-tabs {
-  border-bottom: 1px solid @nav-tabs-border-color;
+  border-bottom: 1px solid var(--bs-nav-tabs-border-color);
   > li {
     float: left;
     // Make the list-items overlay the bottom border
@@ -85,11 +85,11 @@
     // Actual tabs (as links)
     > a {
       margin-right: 2px;
-      line-height: @line-height-base;
+      line-height: var(--bs-line-height-base);
       border: 1px solid transparent;
-      border-radius: @border-radius-base @border-radius-base 0 0;
+      border-radius: var(--bs-border-radius-base) var(--bs-border-radius-base) 0 0;
       &:hover {
-        border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
+        border-color: var(--bs-nav-tabs-link-hover-border-color) var(--bs-nav-tabs-link-hover-border-color) var(--bs-nav-tabs-border-color);
       }
     }
 
@@ -98,10 +98,10 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-tabs-active-link-hover-color;
+        color: var(--bs-nav-tabs-active-link-hover-color);
         cursor: default;
-        background-color: @nav-tabs-active-link-hover-bg;
-        border: 1px solid @nav-tabs-active-link-hover-border-color;
+        background-color: var(--bs-nav-tabs-active-link-hover-bg);
+        border: 1px solid var(--bs-nav-tabs-active-link-hover-border-color);
         border-bottom-color: transparent;
       }
     }
@@ -122,7 +122,7 @@
 
     // Links rendered as pills
     > a {
-      border-radius: @nav-pills-border-radius;
+      border-radius: var(--bs-nav-pills-border-radius);
     }
     + li {
       margin-left: 2px;
@@ -133,8 +133,8 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-pills-active-link-hover-color;
-        background-color: @nav-pills-active-link-hover-bg;
+        color: var(--bs-nav-pills-active-link-hover-color);
+        background-color: var(--bs-nav-pills-active-link-hover-bg);
       }
     }
   }
@@ -195,24 +195,24 @@
   > li > a {
     // Override margin from .nav-tabs
     margin-right: 0;
-    border-radius: @border-radius-base;
+    border-radius: var(--bs-border-radius-base);
   }
 
   > .active > a,
   > .active > a:hover,
   > .active > a:focus {
-    border: 1px solid @nav-tabs-justified-link-border-color;
+    border: 1px solid var(--bs-nav-tabs-justified-link-border-color);
   }
 
   @media (min-width: @screen-sm-min) {
     > li > a {
-      border-bottom: 1px solid @nav-tabs-justified-link-border-color;
-      border-radius: @border-radius-base @border-radius-base 0 0;
+      border-bottom: 1px solid var(--bs-nav-tabs-justified-link-border-color);
+      border-radius: var(--bs-border-radius-base) var(--bs-border-radius-base) 0 0;
     }
     > .active > a,
     > .active > a:hover,
     > .active > a:focus {
-      border-bottom-color: @nav-tabs-justified-active-link-border-color;
+      border-bottom-color: var(--bs-nav-tabs-justified-active-link-border-color);
     }
   }
 }

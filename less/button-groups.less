@@ -131,12 +131,12 @@
 }
 // Carets in other button sizes
 .btn-lg .caret {
-  border-width: @caret-width-large @caret-width-large 0;
+  border-width: var(--bs-caret-width-large) var(--bs-caret-width-large) 0;
   border-bottom-width: 0;
 }
 // Upside down carets for .dropup
 .dropup .btn-lg .caret {
-  border-width: 0 @caret-width-large @caret-width-large;
+  border-width: 0 var(--bs-caret-width-large) var(--bs-caret-width-large);
 }
 
 
@@ -175,12 +175,12 @@
     border-radius: 0;
   }
   &:first-child:not(:last-child) {
-    .border-top-radius(@btn-border-radius-base);
+    .border-top-radius(var(--bs-btn-border-radius-base));
     .border-bottom-radius(0);
   }
   &:last-child:not(:first-child) {
     .border-top-radius(0);
-    .border-bottom-radius(@btn-border-radius-base);
+    .border-bottom-radius(var(--bs-btn-border-radius-base));
   }
 }
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {

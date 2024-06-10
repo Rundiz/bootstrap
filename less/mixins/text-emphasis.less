@@ -4,6 +4,6 @@
   color: @color;
   a&:hover,
   a&:focus {
-    color: darken(@color, 10%);
+    color: hsl(from @color h s calc(l - 10));
   }
 }

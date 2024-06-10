@@ -97,13 +97,13 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: @carousel-control-width;
-  font-size: @carousel-control-font-size;
-  color: @carousel-control-color;
+  width: var(--bs-carousel-control-width);
+  font-size: var(--bs-carousel-control-font-size);
+  color: var(--bs-carousel-control-color);
   text-align: center;
-  text-shadow: @carousel-text-shadow;
+  text-shadow: var(--bs-carousel-text-shadow);
   background-color: rgba(0, 0, 0, 0); // Fix IE9 click-thru bug
-  .opacity(@carousel-control-opacity);
+  .opacity(var(--bs-carousel-control-opacity));
   // We can't have this transition here because WebKit cancels the carousel
   // animation if you trip this while in the middle of another animation.
 
@@ -120,7 +120,7 @@
   // Hover/focus state
   &:hover,
   &:focus {
-    color: @carousel-control-color;
+    color: var(--bs-carousel-control-color);
     text-decoration: none;
     outline: 0;
     .opacity(.9);
@@ -190,19 +190,8 @@
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    // IE8-9 hack for event handling
-    //
-    // Internet Explorer 8-9 does not support clicks on elements without a set
-    // `background-color`. We cannot use `filter` since that's not viewed as a
-    // background color by the browser. Thus, a hack is needed.
-    // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
-    //
-    // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
-    // set alpha transparency for the best results possible.
-    background-color: #000 \9; // IE8
-    background-color: rgba(0, 0, 0, 0); // IE9
 
-    border: 1px solid @carousel-indicator-border-color;
+    border: 1px solid var(--bs-carousel-indicator-border-color);
     border-radius: 10px;
   }
 
@@ -210,7 +199,7 @@
     width: 12px;
     height: 12px;
     margin: 0;
-    background-color: @carousel-indicator-active-bg;
+    background-color: var(--bs-carousel-indicator-active-bg);
   }
 }
 
@@ -225,9 +214,9 @@
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: @carousel-caption-color;
+  color: var(--bs-carousel-caption-color);
   text-align: center;
-  text-shadow: @carousel-text-shadow;
+  text-shadow: var(--bs-carousel-text-shadow);
 
   & .btn {
     text-shadow: none; // No shadow for button elements in carousel-caption
@@ -244,18 +233,18 @@
     .glyphicon-chevron-right,
     .icon-prev,
     .icon-next {
-      width: (@carousel-control-font-size * 1.5);
-      height: (@carousel-control-font-size * 1.5);
-      margin-top: (@carousel-control-font-size / -2);
-      font-size: (@carousel-control-font-size * 1.5);
+      width: calc(var(--bs-carousel-control-font-size) * 1.5);
+      height: calc(var(--bs-carousel-control-font-size) * 1.5);
+      margin-top: calc(var(--bs-carousel-control-font-size) / -2);
+      font-size: calc(var(--bs-carousel-control-font-size) * 1.5);
     }
     .glyphicon-chevron-left,
     .icon-prev {
-      margin-left: (@carousel-control-font-size / -2);
+      margin-left: calc(var(--bs-carousel-control-font-size) / -2px);
     }
     .glyphicon-chevron-right,
     .icon-next {
-      margin-right: (@carousel-control-font-size / -2);
+      margin-right: calc(var(--bs-carousel-control-font-size) / -2px);
     }
   }
 

@@ -23,12 +23,12 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.5);
+  margin-bottom: var(--bs-line-height-computed);
+  font-size: calc(var(--bs-font-size-base) * 1.5);
   line-height: inherit;
-  color: @legend-color;
+  color: var(--bs-legend-color);
   border: 0;
-  border-bottom: 1px solid @legend-border-color;
+  border-bottom: 1px solid var(--bs-legend-border-color);
 }
 
 label {
@@ -63,7 +63,6 @@ input[type="search"] {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-top: 1px \9; // IE8-9
   line-height: normal;
 
   // Apply same disabled cursor tweak as for inputs
@@ -73,7 +72,7 @@ input[type="checkbox"] {
   &[disabled],
   &.disabled,
   fieldset[disabled] & {
-    cursor: @cursor-disabled;
+    cursor: var(--bs-cursor-disabled);
   }
 }
 
@@ -103,10 +102,10 @@ input[type="checkbox"]:focus {
 // Adjust output element
 output {
   display: block;
-  padding-top: (@padding-base-vertical + 1);
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @input-color;
+  padding-top: calc(var(--bs-padding-base-vertical) + 1px);
+  font-size: var(--bs-font-size-base);
+  line-height: var(--bs-line-height-base);
+  color: var(--bs-input-color);
 }
 
 
@@ -135,15 +134,15 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: @padding-base-vertical @padding-base-horizontal;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @input-color;
-  background-color: @input-bg;
+  height: var(--bs-input-height-base); // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: var(--bs-padding-base-vertical) var(--bs-padding-base-horizontal);
+  font-size: var(--bs-font-size-base);
+  line-height: var(--bs-line-height-base);
+  color: var(--bs-input-color);
+  background-color: var(--bs-input-bg);
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid @input-border;
-  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  border: 1px solid var(--bs-input-border);
+  border-radius: var(--bs-input-border-radius); // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
   .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
@@ -167,13 +166,13 @@ output {
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    background-color: @input-bg-disabled;
+    background-color: var(--bs-input-bg-disabled);
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
   }
 
   &[disabled],
   fieldset[disabled] & {
-    cursor: @cursor-disabled;
+    cursor: var(--bs-cursor-disabled);
   }
 
   // Reset height for `textarea`s
@@ -198,17 +197,17 @@ output {
   input[type="datetime-local"],
   input[type="month"] {
     &.form-control {
-      line-height: @input-height-base;
+      line-height: var(--bs-input-height-base);
     }
 
     &.input-sm,
     .input-group-sm & {
-      line-height: @input-height-small;
+      line-height: var(--bs-input-height-small);
     }
 
     &.input-lg,
     .input-group-lg & {
-      line-height: @input-height-large;
+      line-height: var(--bs-input-height-large);
     }
   }
 }
@@ -220,7 +219,7 @@ output {
 // horizontal forms, use the predefined grid classes.
 
 .form-group {
-  margin-bottom: @form-group-margin-bottom;
+  margin-bottom: var(--bs-form-group-margin-bottom);
 }
 
 
@@ -239,12 +238,12 @@ output {
   &.disabled,
   fieldset[disabled] & {
     label {
-      cursor: @cursor-disabled;
+      cursor: var(--bs-cursor-disabled);
     }
   }
 
   label {
-    min-height: @line-height-computed; // Ensure the input doesn't jump when there is no text
+    min-height: var(--bs-line-height-computed); // Ensure the input doesn't jump when there is no text
     padding-left: 20px;
     margin-bottom: 0;
     font-weight: 400;
@@ -279,7 +278,7 @@ output {
   // These are used directly on <label>s
   &.disabled,
   fieldset[disabled] & {
-    cursor: @cursor-disabled;
+    cursor: var(--bs-cursor-disabled);
   }
 }
 .radio-inline + .radio-inline,
@@ -295,10 +294,10 @@ output {
 // a horizontal form layout.
 
 .form-control-static {
-  min-height: (@line-height-computed + @font-size-base);
+  min-height: calc(var(--bs-line-height-computed) + var(--bs-font-size-base));
   // Size it appropriately next to real form controls
-  padding-top: (@padding-base-vertical + 1);
-  padding-bottom: (@padding-base-vertical + 1);
+  padding-top: calc(var(--bs-padding-base-vertical) + 1px);
+  padding-bottom: calc(var(--bs-padding-base-vertical) + 1px);
   // Remove default margin from `p`
   margin-bottom: 0;
 
@@ -319,58 +318,58 @@ output {
 // issue documented in https://github.com/twbs/bootstrap/issues/15074.
 
 .input-sm {
-  .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @input-border-radius-small);
+  .input-size(var(--bs-input-height-small); var(--bs-padding-small-vertical); var(--bs-padding-small-horizontal); var(--bs-font-size-small); var(--bs-line-height-small); var(--bs-input-border-radius-small));
 }
 .form-group-sm {
   .form-control {
-    height: @input-height-small;
-    padding: @padding-small-vertical @padding-small-horizontal;
-    font-size: @font-size-small;
-    line-height: @line-height-small;
-    border-radius: @input-border-radius-small;
+    height: var(--bs-input-height-small);
+    padding: var(--bs-padding-small-vertical) var(--bs-padding-small-horizontal);
+    font-size: var(--bs-font-size-small);
+    line-height: var(--bs-line-height-small);
+    border-radius: var(--bs-input-border-radius-small);
   }
   select.form-control {
-    height: @input-height-small;
-    line-height: @input-height-small;
+    height: var(--bs-input-height-small);
+    line-height: var(--bs-input-height-small);
   }
   textarea.form-control,
   select[multiple].form-control {
     height: auto;
   }
   .form-control-static {
-    height: @input-height-small;
-    min-height: (@line-height-computed + @font-size-small);
-    padding: (@padding-small-vertical + 1) @padding-small-horizontal;
-    font-size: @font-size-small;
-    line-height: @line-height-small;
+    height: var(--bs-input-height-small);
+    min-height: calc(var(--bs-line-height-computed) + var(--bs-font-size-small));
+    padding: calc(var(--bs-padding-small-vertical) + 1px) var(--bs-padding-small-horizontal);
+    font-size: var(--bs-font-size-small);
+    line-height: var(--bs-line-height-small);
   }
 }
 
 .input-lg {
-  .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @input-border-radius-large);
+  .input-size(var(--bs-input-height-large); var(--bs-padding-large-vertical); var(--bs-padding-large-horizontal); var(--bs-font-size-large); var(--bs-line-height-large); var(--bs-input-border-radius-large));
 }
 .form-group-lg {
   .form-control {
-    height: @input-height-large;
-    padding: @padding-large-vertical @padding-large-horizontal;
-    font-size: @font-size-large;
-    line-height: @line-height-large;
-    border-radius: @input-border-radius-large;
+    height: var(--bs-input-height-large);
+    padding: var(--bs-padding-large-vertical) var(--bs-padding-large-horizontal);
+    font-size: var(--bs-font-size-large);
+    line-height: var(--bs-line-height-large);
+    border-radius: var(--bs-input-border-radius-large);
   }
   select.form-control {
-    height: @input-height-large;
-    line-height: @input-height-large;
+    height: var(--bs-input-height-large);
+    line-height: var(--bs-input-height-large);
   }
   textarea.form-control,
   select[multiple].form-control {
     height: auto;
   }
   .form-control-static {
-    height: @input-height-large;
-    min-height: (@line-height-computed + @font-size-large);
-    padding: (@padding-large-vertical + 1) @padding-large-horizontal;
-    font-size: @font-size-large;
-    line-height: @line-height-large;
+    height: var(--bs-input-height-large);
+    min-height: calc(var(--bs-line-height-computed) + var(--bs-font-size-large));
+    padding: calc(var(--bs-padding-large-vertical) + 1px) var(--bs-padding-large-horizontal);
+    font-size: var(--bs-font-size-large);
+    line-height: var(--bs-line-height-large);
   }
 }
 
@@ -385,7 +384,7 @@ output {
 
   // Ensure icons don't overlap text
   .form-control {
-    padding-right: (@input-height-base * 1.25);
+    padding-right: calc(var(--bs-input-height-base) * 1.25);
   }
 }
 // Feedback icon (requires .glyphicon classes)
@@ -395,43 +394,43 @@ output {
   right: 0;
   z-index: 2; // Ensure icon is above input groups
   display: block;
-  width: @input-height-base;
-  height: @input-height-base;
-  line-height: @input-height-base;
+  width: var(--bs-input-height-base);
+  height: var(--bs-input-height-base);
+  line-height: var(--bs-input-height-base);
   text-align: center;
   pointer-events: none;
 }
 .input-lg + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
-  width: @input-height-large;
-  height: @input-height-large;
-  line-height: @input-height-large;
+  width: var(--bs-input-height-large);
+  height: var(--bs-input-height-large);
+  line-height: var(--bs-input-height-large);
 }
 .input-sm + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
-  width: @input-height-small;
-  height: @input-height-small;
-  line-height: @input-height-small;
+  width: var(--bs-input-height-small);
+  height: var(--bs-input-height-small);
+  line-height: var(--bs-input-height-small);
 }
 
 // Feedback states
 .has-success {
-  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+  .form-control-validation(var(--bs-state-success-text); var(--bs-state-success-text); var(--bs-state-success-bg));
 }
 .has-warning {
-  .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
+  .form-control-validation(var(--bs-state-warning-text); var(--bs-state-warning-text); var(--bs-state-warning-bg));
 }
 .has-error {
-  .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+  .form-control-validation(var(--bs-state-danger-text); var(--bs-state-danger-text); var(--bs-state-danger-bg));
 }
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
 
   & ~ .form-control-feedback {
-    top: (@line-height-computed + 5); // Height of the `label` and its margin
+    top: calc(var(--bs-line-height-computed) + 5px); // Height of the `label` and its margin
   }
   &.sr-only ~ .form-control-feedback {
     top: 0;
@@ -448,7 +447,7 @@ output {
   display: block; // account for any element using help-block
   margin-top: 5px;
   margin-bottom: 10px;
-  color: lighten(@text-color, 25%); // lighten the text some for contrast
+  color: ~"hsl(from var(--bs-text-color) h s calc(l + 25))"; // lighten the text some for contrast
 }
 
 
@@ -548,7 +547,7 @@ output {
   .checkbox,
   .radio-inline,
   .checkbox-inline {
-    padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+    padding-top: calc(var(--bs-padding-base-vertical) + 1px); // Default padding plus a border
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -556,7 +555,7 @@ output {
   // and other content below items
   .radio,
   .checkbox {
-    min-height: (@line-height-computed + (@padding-base-vertical + 1));
+    min-height: calc(var(--bs-line-height-computed) + (var(--bs-padding-base-vertical) + 1px));
   }
 
   // Make form groups behave like rows
@@ -568,7 +567,7 @@ output {
   // labels on narrow viewports stack the same as a default form example.
   @media (min-width: @screen-sm-min) {
     .control-label {
-      padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+      padding-top: calc(var(--bs-padding-base-vertical) + 1px); // Default padding plus a border
       margin-bottom: 0;
       text-align: right;
     }
@@ -579,7 +578,7 @@ output {
   // Reposition the icon because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
   .has-feedback .form-control-feedback {
-    right: floor((@grid-gutter-width / 2));
+    right: ~"round(down, calc(var(--bs-grid-gutter-width) / 2), 1px)";
   }
 
   // Form group sizes
@@ -589,16 +588,16 @@ output {
   .form-group-lg {
     @media (min-width: @screen-sm-min) {
       .control-label {
-        padding-top: (@padding-large-vertical + 1);
-        font-size: @font-size-large;
+        padding-top: calc(var(--bs-padding-large-vertical) + 1px);
+        font-size: var(--bs-font-size-large);
       }
     }
   }
   .form-group-sm {
     @media (min-width: @screen-sm-min) {
       .control-label {
-        padding-top: (@padding-small-vertical + 1);
-        font-size: @font-size-small;
+        padding-top: calc(var(--bs-padding-small-vertical) + 1px);
+        font-size: var(--bs-font-size-small);
       }
     }
   }

@@ -1,3 +1,4 @@
+/*! scaffolding */
 //
 // Scaffolding
 // --------------------------------------------------
@@ -25,11 +26,11 @@ html {
 }
 
 body {
-  font-family: @font-family-base;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
+  font-family: var(--bs-font-family-base);
+  font-size: var(--bs-font-size-base);
+  line-height: var(--bs-line-height-base);
+  color: var(--bs-text-color);
+  background-color: var(--bs-body-bg);
 }
 
 // Reset fonts for relevant elements
@@ -46,13 +47,13 @@ textarea {
 // Links
 
 a {
-  color: @link-color;
+  color: var(--bs-link-color);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: @link-hover-color;
-    text-decoration: @link-hover-decoration;
+    color: var(--bs-link-hover-color);
+    text-decoration: var(--bs-link-hover-decoration);
   }
 
   &:focus {
@@ -84,18 +85,18 @@ img {
 
 // Rounded corners
 .img-rounded {
-  border-radius: @border-radius-large;
+  border-radius: var(--bs-border-radius-large);
 }
 
 // Image thumbnails
 //
 // Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
 .img-thumbnail {
-  padding: @thumbnail-padding;
-  line-height: @line-height-base;
-  background-color: @thumbnail-bg;
-  border: 1px solid @thumbnail-border;
-  border-radius: @thumbnail-border-radius;
+  padding: var(--bs-thumbnail-padding);
+  line-height: var(--bs-line-height-base);
+  background-color: var(--bs-thumbnail-bg);
+  border: 1px solid var(--bs-thumbnail-border);
+  border-radius: var(--bs-thumbnail-border-radius);
   .transition(all .2s ease-in-out);
 
   // Keep them at most 100% wide
@@ -111,10 +112,10 @@ img {
 // Horizontal rules
 
 hr {
-  margin-top: @line-height-computed;
-  margin-bottom: @line-height-computed;
+  margin-top: var(--bs-line-height-computed);
+  margin-bottom: var(--bs-line-height-computed);
   border: 0;
-  border-top: 1px solid @hr-border;
+  border-top: 1px solid var(--bs-hr-border);
 }
 
 

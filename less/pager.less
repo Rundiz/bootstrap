@@ -5,7 +5,7 @@
 
 .pager {
   padding-left: 0;
-  margin: @line-height-computed 0;
+  margin: var(--bs-line-height-computed) 0;
   text-align: center;
   list-style: none;
   &:extend(.clearfix all);
@@ -15,15 +15,15 @@
     > span {
       display: inline-block;
       padding: 5px 14px;
-      background-color: @pager-bg;
-      border: 1px solid @pager-border;
-      border-radius: @pager-border-radius;
+      background-color: var(--bs-pager-bg);
+      border: 1px solid var(--bs-pager-border);
+      border-radius: var(--bs-pager-border-radius);
     }
 
     > a:hover,
     > a:focus {
       text-decoration: none;
-      background-color: @pager-hover-bg;
+      background-color: var(--bs-pager-hover-bg);
     }
   }
 
@@ -46,9 +46,9 @@
     > a:hover,
     > a:focus,
     > span {
-      color: @pager-disabled-color;
-      cursor: @cursor-disabled;
-      background-color: @pager-bg;
+      color: var(--bs-pager-disabled-color);
+      cursor: var(--bs-cursor-disabled);
+      background-color: var(--bs-pager-bg);
     }
   }
 }

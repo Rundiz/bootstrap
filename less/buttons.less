@@ -11,7 +11,7 @@
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
-  font-weight: @btn-font-weight;
+  font-weight: var(--bs-btn-font-weight);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -19,7 +19,7 @@
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
-  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
+  .button-size(var(--bs-padding-base-vertical); var(--bs-padding-base-horizontal); var(--bs-font-size-base); var(--bs-line-height-base); var(--bs-btn-border-radius-base));
   .user-select(none);
 
   &,
@@ -34,7 +34,7 @@
   &:hover,
   &:focus,
   &.focus {
-    color: @btn-default-color;
+    color: var(--bs-btn-default-color);
     text-decoration: none;
   }
 
@@ -48,7 +48,7 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    cursor: @cursor-disabled;
+    cursor: var(--bs-cursor-disabled);
     .opacity(.65);
     .box-shadow(none);
   }
@@ -66,26 +66,26 @@
 // --------------------------------------------------
 
 .btn-default {
-  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+  .button-variant(var(--bs-btn-default-color); var(--bs-btn-default-bg); var(--bs-btn-default-border));
 }
 .btn-primary {
-  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  .button-variant(var(--bs-btn-primary-color); var(--bs-btn-primary-bg); var(--bs-btn-primary-border));
 }
 // Success appears as green
 .btn-success {
-  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+  .button-variant(var(--bs-btn-success-color); var(--bs-btn-success-bg); var(--bs-btn-success-border));
 }
 // Info appears as blue-green
 .btn-info {
-  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+  .button-variant(var(--bs-btn-info-color); var(--bs-btn-info-bg); var(--bs-btn-info-border));
 }
 // Warning appears as orange
 .btn-warning {
-  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+  .button-variant(var(--bs-btn-warning-color); var(--bs-btn-warning-bg); var(--bs-btn-warning-border));
 }
 // Danger and error appear as red
 .btn-danger {
-  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+  .button-variant(var(--bs-btn-danger-color); var(--bs-btn-danger-bg); var(--bs-btn-danger-border));
 }
 
 
@@ -95,7 +95,7 @@
 // Make a button look and behave like a link
 .btn-link {
   font-weight: 400;
-  color: @link-color;
+  color: var(--bs-link-color);
   border-radius: 0;
 
   &,
@@ -114,15 +114,15 @@
   }
   &:hover,
   &:focus {
-    color: @link-hover-color;
-    text-decoration: @link-hover-decoration;
+    color: var(--bs-link-hover-color);
+    text-decoration: var(--bs-link-hover-decoration);
     background-color: transparent;
   }
   &[disabled],
   fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: @btn-link-disabled-color;
+      color: var(--bs-btn-link-disabled-color);
       text-decoration: none;
     }
   }
@@ -134,14 +134,14 @@
 
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large);
+  .button-size(var(--bs-padding-large-vertical); var(--bs-padding-large-horizontal); var(--bs-font-size-large); var(--bs-line-height-large); var(--bs-btn-border-radius-large));
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+  .button-size(var(--bs-padding-small-vertical); var(--bs-padding-small-horizontal); var(--bs-font-size-small); var(--bs-line-height-small); var(--bs-btn-border-radius-small));
 }
 .btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+  .button-size(var(--bs-padding-xs-vertical); var(--bs-padding-xs-horizontal); var(--bs-font-size-small); var(--bs-line-height-small); var(--bs-btn-border-radius-small));
 }
 
 

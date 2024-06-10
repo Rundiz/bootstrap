@@ -16,7 +16,7 @@
       &:hover,
       &:focus {
         color: @color;
-        background-color: darken(@background, 5%);
+        background-color: hsl(from @background h s calc(l - 5));
       }
       &.active,
       &.active:hover,

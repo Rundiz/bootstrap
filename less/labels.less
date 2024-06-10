@@ -8,7 +8,7 @@
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
-  color: @label-color;
+  color: var(--bs-label-color);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -18,7 +18,7 @@
   a& {
     &:hover,
     &:focus {
-      color: @label-link-hover-color;
+      color: var(--bs-label-link-hover-color);
       text-decoration: none;
       cursor: pointer;
     }
@@ -40,25 +40,25 @@
 // Contextual variations (linked labels get darker on :hover)
 
 .label-default {
-  .label-variant(@label-default-bg);
+  .label-variant(var(--bs-label-default-bg));
 }
 
 .label-primary {
-  .label-variant(@label-primary-bg);
+  .label-variant(var(--bs-label-primary-bg));
 }
 
 .label-success {
-  .label-variant(@label-success-bg);
+  .label-variant(var(--bs-label-success-bg));
 }
 
 .label-info {
-  .label-variant(@label-info-bg);
+  .label-variant(var(--bs-label-info-bg));
 }
 
 .label-warning {
-  .label-variant(@label-warning-bg);
+  .label-variant(var(--bs-label-warning-bg));
 }
 
 .label-danger {
-  .label-variant(@label-danger-bg);
+  .label-variant(var(--bs-label-danger-bg));
 }

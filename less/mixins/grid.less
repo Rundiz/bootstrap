@@ -3,29 +3,29 @@
 // Generate semantic grid columns with these mixins.
 
 // Centered container element
-.container-fixed(@gutter: @grid-gutter-width) {
-  padding-right: ceil((@gutter / 2));
-  padding-left: floor((@gutter / 2));
+.container-fixed(@gutter: var(--bs-grid-gutter-width)) {
+  padding-right: ~"round(up, calc("@gutter~" / 2), 1px)";
+  padding-left: ~"round(down, calc("@gutter~" / 2), 1px)";
   margin-right: auto;
   margin-left: auto;
   &:extend(.clearfix all);
 }
 
 // Creates a wrapper for a series of columns
-.make-row(@gutter: @grid-gutter-width) {
-  margin-right: floor((@gutter / -2));
-  margin-left: ceil((@gutter / -2));
+.make-row(@gutter: var(--bs-grid-gutter-width)) {
+  margin-right: ~"round(down, calc("@gutter~" / -2), 1px)";
+  margin-left: ~"round(up, calc("@gutter~" / -2))";
   &:extend(.clearfix all);
 }
 
 // Generate the extra small columns
-.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+.make-xs-column(@columns; @gutter: var(--bs-grid-gutter-width)) {
   position: relative;
   float: left;
   width: percentage((@columns / @grid-columns));
   min-height: 1px;
-  padding-right: (@gutter / 2);
-  padding-left: (@gutter / 2);
+  padding-right: calc(@gutter / 2);
+  padding-left: calc(@gutter / 2);
 }
 .make-xs-column-offset(@columns) {
   margin-left: percentage((@columns / @grid-columns));
@@ -38,11 +38,11 @@
 }
 
 // Generate the small columns
-.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+.make-sm-column(@columns; @gutter: var(--bs-grid-gutter-width)) {
   position: relative;
   min-height: 1px;
-  padding-right: (@gutter / 2);
-  padding-left: (@gutter / 2);
+  padding-right: calc(@gutter / 2);
+  padding-left: calc(@gutter / 2);
 
   @media (min-width: @screen-sm-min) {
     float: left;
@@ -66,11 +66,11 @@
 }
 
 // Generate the medium columns
-.make-md-column(@columns; @gutter: @grid-gutter-width) {
+.make-md-column(@columns; @gutter: var(--bs-grid-gutter-width)) {
   position: relative;
   min-height: 1px;
-  padding-right: (@gutter / 2);
-  padding-left: (@gutter / 2);
+  padding-right: calc(@gutter / 2);
+  padding-left: calc(@gutter / 2);
 
   @media (min-width: @screen-md-min) {
     float: left;
@@ -94,11 +94,11 @@
 }
 
 // Generate the large columns
-.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+.make-lg-column(@columns; @gutter: var(--bs-grid-gutter-width)) {
   position: relative;
   min-height: 1px;
-  padding-right: (@gutter / 2);
-  padding-left: (@gutter / 2);
+  padding-right: calc(@gutter / 2);
+  padding-left: calc(@gutter / 2);
 
   @media (min-width: @screen-lg-min) {
     float: left;

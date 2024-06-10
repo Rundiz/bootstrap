@@ -8,12 +8,12 @@
 // Mixin and adjust the regular image class
 .thumbnail {
   display: block;
-  padding: @thumbnail-padding;
-  margin-bottom: @line-height-computed;
-  line-height: @line-height-base;
-  background-color: @thumbnail-bg;
-  border: 1px solid @thumbnail-border;
-  border-radius: @thumbnail-border-radius;
+  padding: var(--bs-thumbnail-padding);
+  margin-bottom: var(--bs-line-height-computed);
+  line-height: var(--bs-line-height-base);
+  background-color: var(--bs-thumbnail-bg);
+  border: 1px solid var(--bs-thumbnail-border);
+  border-radius: var(--bs-thumbnail-border-radius);
   .transition(border .2s ease-in-out);
 
   > img,
@@ -27,12 +27,12 @@
   a&:hover,
   a&:focus,
   a&.active {
-    border-color: @link-color;
+    border-color: var(--bs-link-color);
   }
 
   // Image captions
   .caption {
-    padding: @thumbnail-caption-padding;
-    color: @thumbnail-caption-color;
+    padding: var(--bs-thumbnail-caption-padding);
+    color: var(--bs-thumbnail-caption-color);
   }
 }

@@ -4,8 +4,8 @@
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin: @line-height-computed 0;
-  border-radius: @border-radius-base;
+  margin: var(--bs-line-height-computed) 0;
+  border-radius: var(--bs-border-radius-base);
 
   > li {
     display: inline; // Remove list-style and block-level defaults
@@ -13,33 +13,33 @@
     > span {
       position: relative;
       float: left; // Collapse white-space
-      padding: @padding-base-vertical @padding-base-horizontal;
+      padding: var(--bs-padding-base-vertical) var(--bs-padding-base-horizontal);
       margin-left: -1px;
-      line-height: @line-height-base;
-      color: @pagination-color;
+      line-height: var(--bs-line-height-base);
+      color: var(--bs-pagination-color);
       text-decoration: none;
-      background-color: @pagination-bg;
-      border: 1px solid @pagination-border;
+      background-color: var(--bs-pagination-bg);
+      border: 1px solid var(--bs-pagination-border);
 
       &:hover,
       &:focus {
         z-index: 2;
-        color: @pagination-hover-color;
-        background-color: @pagination-hover-bg;
-        border-color: @pagination-hover-border;
+        color: var(--bs-pagination-hover-color);
+        background-color: var(--bs-pagination-hover-bg);
+        border-color: var(--bs-pagination-hover-border);
       }
     }
     &:first-child {
       > a,
       > span {
         margin-left: 0;
-        .border-left-radius(@border-radius-base);
+        .border-left-radius(var(--bs-border-radius-base));
       }
     }
     &:last-child {
       > a,
       > span {
-        .border-right-radius(@border-radius-base);
+        .border-right-radius(var(--bs-border-radius-base));
       }
     }
   }
@@ -50,10 +50,10 @@
     &:hover,
     &:focus {
       z-index: 3;
-      color: @pagination-active-color;
+      color: var(--bs-pagination-active-color);
       cursor: default;
-      background-color: @pagination-active-bg;
-      border-color: @pagination-active-border;
+      background-color: var(--bs-pagination-active-bg);
+      border-color: var(--bs-pagination-active-border);
     }
   }
 
@@ -64,10 +64,10 @@
     > a,
     > a:hover,
     > a:focus {
-      color: @pagination-disabled-color;
-      cursor: @cursor-disabled;
-      background-color: @pagination-disabled-bg;
-      border-color: @pagination-disabled-border;
+      color: var(--bs-pagination-disabled-color);
+      cursor: var(--bs-cursor-disabled);
+      background-color: var(--bs-pagination-disabled-bg);
+      border-color: var(--bs-pagination-disabled-border);
     }
   }
 }
@@ -77,10 +77,10 @@
 
 // Large
 .pagination-lg {
-  .pagination-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  .pagination-size(var(--bs-padding-large-vertical); var(--bs-padding-large-horizontal); var(--bs-font-size-large); var(--bs-line-height-large); var(--bs-border-radius-large));
 }
 
 // Small
 .pagination-sm {
-  .pagination-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+  .pagination-size(var(--bs-padding-small-vertical); var(--bs-padding-small-horizontal); var(--bs-font-size-small); var(--bs-line-height-small); var(--bs-border-radius-small));
 }

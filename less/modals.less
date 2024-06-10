@@ -19,7 +19,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal;
+  z-index: var(--bs-zindex-modal);
   display: none;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
@@ -50,11 +50,10 @@
 // Actual modal
 .modal-content {
   position: relative;
-  background-color: @modal-content-bg;
+  background-color: var(--bs-modal-content-bg);
   background-clip: padding-box;
-  border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
-  border: 1px solid @modal-content-border-color;
-  border-radius: @border-radius-large;
+  border: 1px solid var(--bs-modal-content-border-color);
+  border-radius: var(--bs-border-radius-large);
   .box-shadow(0 3px 9px rgba(0, 0, 0, .5));
   // Remove focus outline from opened modal
   outline: 0;
@@ -67,18 +66,18 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal-background;
-  background-color: @modal-backdrop-bg;
+  z-index: var(--bs-zindex-modal-background);
+  background-color: var(--bs-modal-backdrop-bg);
   // Fade for backdrop
   &.fade { .opacity(0); }
-  &.in { .opacity(@modal-backdrop-opacity); }
+  &.in { .opacity(var(--bs-modal-backdrop-opacity)); }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
 .modal-header {
-  padding: @modal-title-padding;
-  border-bottom: 1px solid @modal-header-border-color;
+  padding: var(--bs-modal-title-padding);
+  border-bottom: 1px solid var(--bs-modal-header-border-color);
   &:extend(.clearfix all);
 }
 // Close icon
@@ -89,21 +88,21 @@
 // Title text within header
 .modal-title {
   margin: 0;
-  line-height: @modal-title-line-height;
+  line-height: var(--bs-modal-title-line-height);
 }
 
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: @modal-inner-padding;
+  padding: var(--bs-modal-inner-padding);
 }
 
 // Footer (for actions)
 .modal-footer {
-  padding: @modal-inner-padding;
+  padding: var(--bs-modal-inner-padding);
   text-align: right; // right align buttons
-  border-top: 1px solid @modal-footer-border-color;
+  border-top: 1px solid var(--bs-modal-footer-border-color);
   &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
@@ -134,7 +133,7 @@
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: @modal-md;
+    width: var(--bs-modal-md);
     margin: 30px auto;
   }
   .modal-content {
@@ -142,9 +141,9 @@
   }
 
   // Modal sizes
-  .modal-sm { width: @modal-sm; }
+  .modal-sm { width: var(--bs-modal-sm); }
 }
 
 @media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
+  .modal-lg { width: var(--bs-modal-lg); }
 }

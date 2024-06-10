@@ -6,10 +6,10 @@
   border-color: @border;
 
   hr {
-    border-top-color: darken(@border, 5%);
+    border-top-color: hsl(from @border h s calc(l - 5));// browsers supported ( https://caniuse.com/css-relative-colors )
   }
 
   .alert-link {
-    color: darken(@text-color, 10%);
+    color: hsl(from @text-color h s calc(l - 10));
   }
 }

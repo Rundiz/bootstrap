@@ -77,26 +77,26 @@
 // Text input groups
 // -------------------------
 .input-group-addon {
-  padding: @padding-base-vertical @padding-base-horizontal;
-  font-size: @font-size-base;
+  padding: var(--bs-padding-base-vertical) var(--bs-padding-base-horizontal);
+  font-size: var(--bs-font-size-base);
   font-weight: 400;
   line-height: 1;
-  color: @input-color;
+  color: var(--bs-input-color);
   text-align: center;
-  background-color: @input-group-addon-bg;
-  border: 1px solid @input-group-addon-border-color;
-  border-radius: @input-border-radius;
+  background-color: var(--bs-input-group-addon-bg);
+  border: 1px solid var(--bs-input-group-addon-border-color);
+  border-radius: var(--bs-input-border-radius);
 
   // Sizing
   &.input-sm {
-    padding: @padding-small-vertical @padding-small-horizontal;
-    font-size: @font-size-small;
-    border-radius: @input-border-radius-small;
+    padding: var(--bs-padding-small-vertical) var(--bs-padding-small-horizontal);
+    font-size: var(--bs-font-size-small);
+    border-radius: var(--bs-input-border-radius-small);
   }
   &.input-lg {
-    padding: @padding-large-vertical @padding-large-horizontal;
-    font-size: @font-size-large;
-    border-radius: @input-border-radius-large;
+    padding: var(--bs-padding-large-vertical) var(--bs-padding-large-horizontal);
+    font-size: var(--bs-font-size-large);
+    border-radius: var(--bs-input-border-radius-large);
   }
 
   // Nuke default margins from checkboxes and radios to vertically center within.

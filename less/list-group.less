@@ -26,32 +26,32 @@
   padding: 10px 15px;
   // Place the border on the list items and negative margin up for better styling
   margin-bottom: -1px;
-  background-color: @list-group-bg;
-  border: 1px solid @list-group-border;
+  background-color: var(--bs-list-group-bg);
+  border: 1px solid var(--bs-list-group-border);
 
   // Round the first and last items
   &:first-child {
-    .border-top-radius(@list-group-border-radius);
+    .border-top-radius(var(--bs-list-group-border-radius));
   }
   &:last-child {
     margin-bottom: 0;
-    .border-bottom-radius(@list-group-border-radius);
+    .border-bottom-radius(var(--bs-list-group-border-radius));
   }
 
   // Disabled state
   &.disabled,
   &.disabled:hover,
   &.disabled:focus {
-    color: @list-group-disabled-color;
-    cursor: @cursor-disabled;
-    background-color: @list-group-disabled-bg;
+    color: var(--bs-list-group-disabled-color);
+    cursor: var(--bs-cursor-disabled);
+    background-color: var(--bs-list-group-disabled-bg);
 
     // Force color to inherit for custom content
     .list-group-item-heading {
       color: inherit;
     }
     .list-group-item-text {
-      color: @list-group-disabled-text-color;
+      color: var(--bs-list-group-disabled-text-color);
     }
   }
 
@@ -60,9 +60,9 @@
   &.active:hover,
   &.active:focus {
     z-index: 2; // Place active items above their siblings for proper border styling
-    color: @list-group-active-color;
-    background-color: @list-group-active-bg;
-    border-color: @list-group-active-border;
+    color: var(--bs-list-group-active-color);
+    background-color: var(--bs-list-group-active-bg);
+    border-color: var(--bs-list-group-active-border);
 
     // Force color to inherit for custom content
     .list-group-item-heading,
@@ -71,7 +71,7 @@
       color: inherit;
     }
     .list-group-item-text {
-      color: @list-group-active-text-color;
+      color: var(--bs-list-group-active-text-color);
     }
   }
 }
@@ -84,18 +84,18 @@
 
 a.list-group-item,
 button.list-group-item {
-  color: @list-group-link-color;
+  color: var(--bs-list-group-link-color);
 
   .list-group-item-heading {
-    color: @list-group-link-heading-color;
+    color: var(--bs-list-group-link-heading-color);
   }
 
   // Hover state
   &:hover,
   &:focus {
-    color: @list-group-link-hover-color;
+    color: var(--bs-list-group-link-hover-color);
     text-decoration: none;
-    background-color: @list-group-hover-bg;
+    background-color: var(--bs-list-group-hover-bg);
   }
 }
 
@@ -110,10 +110,10 @@ button.list-group-item {
 // Add modifier classes to change text and background color on individual items.
 // Organizationally, this must come after the `:hover` states.
 
-.list-group-item-variant(success; @state-success-bg; @state-success-text);
-.list-group-item-variant(info; @state-info-bg; @state-info-text);
-.list-group-item-variant(warning; @state-warning-bg; @state-warning-text);
-.list-group-item-variant(danger; @state-danger-bg; @state-danger-text);
+.list-group-item-variant(success; var(--bs-state-success-bg); var(--bs-state-success-text));
+.list-group-item-variant(info; var(--bs-state-info-bg); var(--bs-state-info-text));
+.list-group-item-variant(warning; var(--bs-state-warning-bg); var(--bs-state-warning-text));
+.list-group-item-variant(danger; var(--bs-state-danger-bg); var(--bs-state-danger-text));
 
 
 // Custom content options

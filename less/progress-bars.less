@@ -26,11 +26,11 @@
 
 // Outer container
 .progress {
-  height: @line-height-computed;
-  margin-bottom: @line-height-computed;
+  height: var(--bs-line-height-computed);
+  margin-bottom: var(--bs-line-height-computed);
   overflow: hidden;
-  background-color: @progress-bg;
-  border-radius: @progress-border-radius;
+  background-color: var(--bs-progress-bg);
+  border-radius: var(--bs-progress-border-radius);
   .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
 }
 
@@ -39,11 +39,11 @@
   float: left;
   width: 0%;
   height: 100%;
-  font-size: @font-size-small;
-  line-height: @line-height-computed;
-  color: @progress-bar-color;
+  font-size: var(--bs-font-size-small);
+  line-height: var(--bs-line-height-computed);
+  color: var(--bs-progress-bar-color);
   text-align: center;
-  background-color: @progress-bar-bg;
+  background-color: var(--bs-progress-bar-bg);
   .box-shadow(inset 0 -1px 0 rgba(0, 0, 0, .15));
   .transition(width .6s ease);
 }
@@ -73,17 +73,17 @@
 // -------------------------
 
 .progress-bar-success {
-  .progress-bar-variant(@progress-bar-success-bg);
+  .progress-bar-variant(var(--bs-progress-bar-success-bg));
 }
 
 .progress-bar-info {
-  .progress-bar-variant(@progress-bar-info-bg);
+  .progress-bar-variant(var(--bs-progress-bar-info-bg));
 }
 
 .progress-bar-warning {
-  .progress-bar-variant(@progress-bar-warning-bg);
+  .progress-bar-variant(var(--bs-progress-bar-warning-bg));
 }
 
 .progress-bar-danger {
-  .progress-bar-variant(@progress-bar-danger-bg);
+  .progress-bar-variant(var(--bs-progress-bar-danger-bg));
 }
