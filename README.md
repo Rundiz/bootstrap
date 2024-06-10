@@ -4,7 +4,7 @@ Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and
 
 To get started, check out <https://getbootstrap.com/>!
 
-This repository is a fork of original Bootstrap but only version 3. This is to make it use new functions and syntax and work with modern web browsers.  
+This repository is a fork of original Bootstrap but keep only version 3. This is to make it use new functions and syntax and work with modern web browsers.  
 There is no new or extra features than original Bootstrap 3 and no new feature request here.
 
 
