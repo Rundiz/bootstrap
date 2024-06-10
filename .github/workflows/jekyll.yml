@@ -1,5 +1,10 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy Jekyll site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,11 +33,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Ruby 2.6
-      # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-      # change this to (see https://github.com/ruby/setup-ruby#versioning):
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
-      # uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           ruby-version: '2.6.3'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
@@ -45,11 +47,9 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" -d ./_gh_pages
         env:
           JEKYLL_ENV: production
-        #uses: actions/jekyll-build-pages@v1
-        #with:
-        #  source: ./
-        #  destination: ./_site
+        # ( https://stackoverflow.com/a/75914827/128761 ) do not use `actions/jekyll-build-pages` because it will cause the error "github-pages gem can't satisfy your Gemfile's dependencies".
       - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_gh_pages
