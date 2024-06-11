@@ -91,7 +91,7 @@ Bootstrap's documentation, included in this repo in the root directory, is built
 #### Use Docker
 1. Install [Docker](https://www.docker.com/) and then install [Docker image named **jekyll**](https://hub.docker.com/r/jekyll/jekyll/) via command `docker pull jekyll/jekyll:3.8.6`.
 2. From the root `/bootstrap` directory, run Docker image via command `docker run --rm -it --volume="%cd%:/srv/jekyll" --publish 9001:9001  jekyll/jekyll:3.8.6 jekyll serve`. You may replace `%cd%` to `$PWD` on Linux.  
-  You may use command `docker run --rm -it --volume="%cd%:/srv/jekyll" --publish 9001:9001  jekyll/jekyll:3.8.6 jekyll serve --force_polling --livereload` to make it auto regenerate the document on Windows.
+   Or you may use command `docker run --rm -it --volume="%cd%:/srv/jekyll" --publish 9001:9001 --publish 35729:35729  jekyll/jekyll:3.8.6 jekyll serve --watch --force_polling --livereload` to make it auto regenerate the document and live reload on Windows.
 3. Open `http://localhost:9001/docs/3.4/` in your browser.
 
 Learn more about using Jekyll by reading its [documentation](https://jekyllrb.com/docs/).
