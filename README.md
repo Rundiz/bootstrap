@@ -9,7 +9,7 @@ To get started, check out <https://getbootstrap.com/>!
 This repository is a fork of original Bootstrap but keep only version 3. This is to make it use new functions and syntax and work with modern web browsers.  
 There is no new or extra features than original Bootstrap 3 and no new feature request here.
 
-[See demo](https://rundiz.github.io/bootstrap3/)
+[See a demo](https://rundiz.github.io/bootstrap3/)
 
 
 ## Table of contents
@@ -36,7 +36,7 @@ This repo. use [CSS relative color syntax](https://caniuse.com/css-relative-colo
 
 Several quick start options are available:
 
-* [Download the latest release](https://github.com/rundiz/bootstrap3/archive/v3.4.1.zip).
+* [Download the latest release](https://github.com/rundiz/bootstrap3/releases/latest).
 * Clone the repo: `git clone https://github.com/rundiz/bootstrap3.git`.
 
 Read the [Getting started page](https://getbootstrap.com/docs/3.4/getting-started/) for information on the framework contents, templates and examples, and more.
